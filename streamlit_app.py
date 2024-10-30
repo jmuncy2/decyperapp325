@@ -9,7 +9,7 @@ menu = st.sidebar.radio("Select a page:", ["Home", "Results", "About"])
 if menu == "Home":
     st.title("Welcome to the Decypher App Showcase")
     st.write(
-        "This website is to showcase the results our group has made on our Final Project."
+        "See It, Say It! is a product created via machine learning methods for image identification. Its purpose is to be an aid for primary aged children to learn words associated with real world objects in English and Spanish."
 )
 
 if menu == "Results":
@@ -42,8 +42,12 @@ if menu == "Results":
 
 
 elif menu == "About":
-    st.title("About This App")
-    st.write(
-        "Information about app."
-    )
+    
+    file_path = 'frontend/about.txt'
+
+    with open(file_path, 'r') as file:
+        content = file.read()
+
+    st.markdown(content)
+    
 
