@@ -7,10 +7,13 @@ st.sidebar.title("Menu")
 menu = st.sidebar.radio("Select a page:", ["Home", "Results", "About"])
 
 if menu == "Home":
-    st.title("Welcome to the Decypher App Showcase")
-    st.write(
-        "See It, Say It! is a product created via machine learning methods for image identification. Its purpose is to be an aid for primary aged children to learn words associated with real world objects in English and Spanish."
-)
+    file_path = 'frontend/home.txt'
+
+    with open(file_path, 'r') as file:
+        content = file.read()
+
+    st.markdown(content)    
+
 
 if menu == "Results":
     st.title("Results")
